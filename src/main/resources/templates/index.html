@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+ .container {
+ max-width: 560px;
+ }
+ </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>알바콘</h2>
+    </div>
+    <h4 class="mb-3">로그인</h4>
+    <form action="item.html" th:action="/basic/items/add" method="post">
+        <div>
+            <label for="testName">아이디</label>
+            <input type="text" id="testName" name="testName" class="form-control" placeholder="아이디">
+        </div>
+        <div>
+            <label for="testId">비밀번호</label>
+            <input type="text" id="testId" name="testId" class="form-control"
+                   placeholder="비밀번호">
+        </div>
+        <hr class="my-4">
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">로그인</button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        th:onclick="|location.href='@{/templates/basic/user/add}'|"
+                        onclick="location.href='../html/addForm.html'" type="button">회원가입</button>
+            </div>
+        </div>
+    </form>
+</div> <!-- /container -->
+</body>
+</html>
