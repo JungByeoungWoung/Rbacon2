@@ -46,7 +46,8 @@
       </div>
       <div class="col">
         <button class="w-100 btn btn-secondary btn-lg"
-                onclick="location.href='../'" type="button">취소</button>
+                th:onclick="|location.href='@{/}'|"
+                onclick="location.href='../index.html'" type="button">취소</button>
       </div>
     </div>
   </form>

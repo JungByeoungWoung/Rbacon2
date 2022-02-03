@@ -7,9 +7,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
@@ -22,20 +24,22 @@ public class BasicManagerController {
     public String saveForm() {
         return "basic/addForm";
     }
-//    public String save(@RequestParam String testName,
-//                       @RequestParam String testId,
-//                       @RequestParam String testPwd,
-//                       @RequestParam String testEmail,
-//                       @RequestParam String testPhone,
-//                       Model model) {
-//        ManagerUser managerUser = new ManagerUser();
-//        managerUser.setTestName(managerUser.getTestName());
-//        managerUser.setTestId(managerUser.getTestId());
-//        managerUser.setTestPwd(managerUser.getTestPwd());
-//        managerUser.setTestEmail(managerUser.getTestEmail());
-//        managerUser.setTestPhone(managerUser.getTestPhone());
-//        memoryRepository.save(managerUser);
-//        log.info("debug log={}",managerUser.toString());
-//        return "basic/addForm";
-//    }
+
+    @PostMapping("/addUser")
+    public String save(@RequestParam String testName,
+                       @RequestParam String testId,
+                       @RequestParam String testPwd,
+                       @RequestParam String testEmail,
+                       @RequestParam String testPhone,
+                       Model model) {
+        ManagerUser managerUser = new ManagerUser();
+        managerUser.setTestName(managerUser.getTestName());
+        managerUser.setTestId(managerUser.getTestId());
+        managerUser.setTestPwd(managerUser.getTestPwd());
+        managerUser.setTestEmail(managerUser.getTestEmail());
+        managerUser.setTestPhone(managerUser.getTestPhone());
+        memoryRepository.save(managerUser);
+        log.info("debug log={}",managerUser.toString());
+        return "basic/addForm";
+    }
 }
