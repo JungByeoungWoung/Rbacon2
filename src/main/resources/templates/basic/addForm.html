@@ -16,7 +16,7 @@
     <h2>알바콘 가입</h2>
   </div>
   <h4 class="mb-3">회원 가입 정보 입력</h4>
-  <form action="item.html" th:action="/basic/items/add" method="post">
+  <form action="addForm.html" th:action method="post">
     <div>
       <label for="testName">이름</label>
       <input type="text" id="testName" name="testName" class="form-control" placeholder="이름을 입력하세요">
@@ -46,8 +46,7 @@
       </div>
       <div class="col">
         <button class="w-100 btn btn-secondary btn-lg"
-                th:onclick="|location.href='@{/basic/items}'|"
-                onclick="location.href='/static/index.html'" type="button">취소</button>
+                onclick="location.href='../'" type="button">취소</button>
       </div>
     </div>
   </form>
