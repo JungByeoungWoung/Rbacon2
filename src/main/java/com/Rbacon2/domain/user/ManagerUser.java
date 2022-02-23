@@ -1,8 +1,12 @@
 package com.Rbacon2.domain.user;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Data
+@Getter
+@Setter
 public class ManagerUser {
     private Long num;
     private String testName;

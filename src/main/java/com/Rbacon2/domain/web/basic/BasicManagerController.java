@@ -7,25 +7,26 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @Controller
-@RequestMapping("/basic/addForm")
+@RequestMapping("/basic/login")
 @RequiredArgsConstructor
 public class BasicManagerController {
-    private Repository memoryRepository = new ManagerMemoryRepository();
+    private final Repository memoryRepository = new ManagerMemoryRepository();
 
     @GetMapping
+    public String loginHome(){
+        return "basic/loginForm";
+    }
+
+    @GetMapping("/add")
     public String saveForm() {
         return "basic/addForm";
     }
 
-    @PostMapping("/addUser")
+    @PostMapping("/add")
     public String save(@RequestParam String testName,
                        @RequestParam String testId,
                        @RequestParam String testPwd,
@@ -33,12 +34,13 @@ public class BasicManagerController {
                        @RequestParam String testPhone,
                        Model model) {
         ManagerUser managerUser = new ManagerUser();
-        managerUser.setTestName(managerUser.getTestName());
-        managerUser.setTestId(managerUser.getTestId());
-        managerUser.setTestPwd(managerUser.getTestPwd());
-        managerUser.setTestEmail(managerUser.getTestEmail());
-        managerUser.setTestPhone(managerUser.getTestPhone());
+        managerUser.setTestName(testName);
+        managerUser.setTestId(testId);
+        managerUser.setTestPwd(testPwd);
+        managerUser.setTestEmail(testEmail);
+        managerUser.setTestPhone(testPhone);
         memoryRepository.save(managerUser);
+        model.addAttribute("managerUser", managerUser);
         log.info("debug log={}",managerUser.toString());
         return "basic/addForm";
     }

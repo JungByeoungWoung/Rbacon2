@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <link th:href="@{/css/bootstrap.min.css}"
+        href="../css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ .container {
+ max-width: 560px;
+ }
+ </style>
+</head>
+<body>
+<div class="py-5 text-center">
+  <h2>알바콘</h2>
+</div>
+<div class="container">
+<hr class="my-4">
+<div class="row">
+  <div class="col">
+    <button class="w-100 btn btn-primary btn-lg"
+            onclick="location.href='XXForm.html'" type="button">로그인</button>
+  </div>
+  <div class="col">
+    <button class="w-100 btn btn-secondary btn-lg"
+            onclick="location.href='addForm.html'" type="button">회원가입</button>
+  </div>
+</div>
+</div> <!-- /container -->
+</body>
+</html>
