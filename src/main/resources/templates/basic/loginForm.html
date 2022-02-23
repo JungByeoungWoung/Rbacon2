@@ -23,7 +23,9 @@
   </div>
   <div class="col">
     <button class="w-100 btn btn-secondary btn-lg"
-            onclick="location.href='addForm.html'" type="button">회원가입</button>
+            onclick="location.href='addForm.html'"
+            th:onclick="|location.href='@{/basic/login/add}'|"
+            type="button">회원가입</button>
   </div>
 </div>
 </div> <!-- /container -->
