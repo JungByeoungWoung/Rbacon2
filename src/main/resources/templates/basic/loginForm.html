@@ -13,7 +13,24 @@
 <body>
 <div class="py-5 text-center">
   <h2>알바콘</h2>
+
 </div>
+<div class="container">
+  <div class="py-5 text-center">
+  </div>
+  <h4 class="mb-3"></h4>
+  <form action="loginForm.html" th:action method="post">
+    <div>
+    <label for="testId"></label>
+      <input type="text" id="testId" name="testId" class="form-control"
+             placeholder="아이디를 입력하세요">
+    </div>
+    <div>
+      <label for="testPwd"></label>
+      <input type="text" id="testPwd" name="testPwd" class="form-control" placeholder="비밀번호를 입력하세요">
+    </div>
+  </form>
+</div> <!-- /container -->
 <div class="container">
 <hr class="my-4">
 <div class="row">
