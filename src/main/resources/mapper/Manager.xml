@@ -7,6 +7,6 @@
     <insert id="saveManager" parameterType="com.Rbacon2.domain.user.ManagerUser">
         INSERT INTO SYSTEM.ALBACON_USER
         (NAME,ID,PWD,EMAIL,PHONE)
-        VALUES(#{testName},#{testId},#{testPwd},#{testEmail},#{testPhone});
+        VALUES(#{testName},#{testId},#{testPwd},#{testEmail},#{testPhone})
     </insert>
 </mapper>
