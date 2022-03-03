@@ -15,7 +15,7 @@ public class ManagerOraRepository {
     ManagerMapper managerMapper;
 
     @Transactional
-    public void joinManager(ManagerUser managerUser) {
+    public void saveManager(ManagerUser managerUser) {
         managerUser.setTestName(managerUser.getTestName());
         managerUser.setTestId(managerUser.getTestId());
         managerUser.setTestPwd(managerUser.getTestPwd());
@@ -23,4 +23,5 @@ public class ManagerOraRepository {
         managerUser.setTestPhone(managerUser.getTestPhone());
         managerMapper.saveManager(managerUser);
     }
+
 }

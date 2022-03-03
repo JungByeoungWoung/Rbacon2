@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Slf4j
 @Controller
 @RequestMapping("/basic/login")
@@ -52,8 +54,9 @@ public class BasicManagerController {
 
     @PostMapping("/add")
     public String save(ManagerUser managerUser) {
-        managerOraRepository.joinManager(managerUser);
+        managerOraRepository.saveManager(managerUser);
         log.info("debug log={}",managerUser.toString());
         return "/basic/loginForm";
     }
+
 }

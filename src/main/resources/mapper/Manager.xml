@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 에는 mapper 인터페이스의 경로를 명시 해줘야함 -->
 <mapper namespace="com.Rbacon2.mapper.ManagerMapper">
     <insert id="saveManager" parameterType="com.Rbacon2.domain.user.ManagerUser">
         INSERT INTO SYSTEM.ALBACON_USER
